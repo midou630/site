@@ -1,0 +1,42 @@
+.image-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/image20.jpg'); /* رابط الصورة الخاصة بك */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.form-container {
+  background-color: #f8f9fa; /* لون خلفية الحاوية */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 50px auto;
+  width: fit-content; /* يجعل الحاوية تتبع عرض المحتوى */
+  border: 2px solid #ccc;
+  background: #3f90b5;
+background: linear-gradient(90deg, rgba(63, 144, 181, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+}
+
+.containerpp {
+  width: 1200px; /* عرض الحاوية */
+  height: 400px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
+}

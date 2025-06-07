@@ -1,0 +1,97 @@
+.containerpp {
+  width: 1200px; /* عرض الحاوية */
+  height: 400px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 50px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px; /* تعديل المسافة لتناسب التنسيق */
+    margin-top: 10px;
+}
+
+#codeInput, #submitBtn {
+
+  width: 100%; /* عرض كامل داخل الحاوية */
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px; /* المسافة بين الإدخال والزر */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#submitBtn {
+  background-color: rgba(0, 0, 0, 0.1); /* شفاف عند البداية */
+  color: black;
+  cursor: not-allowed;
+
+}
+
+#submitBtn:enabled {
+  background-color: black; /* الزر يصبح أسود عندما يكون مفعل */
+  color: white;
+  cursor: pointer;
+}
+
+#submitBtn:disabled {
+  background-color: rgba(0, 0, 0, 0.1); /* شفاف عندما لا يعمل */
+}
+
+#submitBtn h4 {
+  margin: 0; /* إزالة المسافة حول النص */
+  font-size: 18px;
+  font-weight: normal;
+}
+
+
+
+
+/* حاوية الصور */
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  width: 1200px;
+  margin-top: 50px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* تصميم الخطوات */
+.step {
+  width: 30%; /* عرض كل صورة */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.step img {
+  width: 100%; /* جعل الصورة تملأ الحاوية */
+  height: auto;
+  border-radius: 5px;
+}
+
+.step p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+
+
+.image-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/image21.jpg'); /* رابط الصورة الخاصة بك */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}

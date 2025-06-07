@@ -1,0 +1,44 @@
+.container1 {
+  position: relative;
+  top: 100px; /* يجعل العنصر ينزل للأسفل */
+  background: white;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+
+h2 {
+  color: #333;
+}
+
+input, textarea {
+  width: 95%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 50px;
+}
+
+button {
+  background: black;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+#responseMessage {
+  margin-top: 10px;
+  font-weight: bold;
+}

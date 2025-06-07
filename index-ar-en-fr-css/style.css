@@ -1,0 +1,598 @@
+@import 'https://fonts.googleeapis.com/css2?family=poppins:wght@300;400;500;600;700;800;900&display=swap';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+font-family: 'poppins','sans-serif'
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* يجعل العناصر داخل الـ body تتكدس عموديًا */
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    font-family: 'Helvetica', sans-serif;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 8%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* إضافة ضباب خفيف حول الحواف */
+
+}
+
+.logo{
+  font-size: 25px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: time new romen;
+}
+
+.navbar a {
+  font-size: 18px;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 20px;
+  transition: .3s;
+}
+
+.navbar a:hover
+{
+  color: weight;
+}
+
+.social-media{
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  height: 40px;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transform: rotate(45deg);
+  transition: .5s;
+}
+
+.social-media a:hover{
+  border-color: #000000;
+}
+
+.social-media a i {
+  font-size: 24px;
+  color: #000000;
+  transform: rotate(-45deg);
+
+}
+.image-container {
+    width: 100%;
+    height: 90vh;
+    background-image: url('../images/image12.jpg'); /* رابط الصورة الخاصة بك */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* خلفية داكنة للمحتوى فوق الصورة */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.text p {
+    font-size: 20px;
+    margin-bottom: 20px;
+font-family: monospace;
+font-weight: bold;
+color: rgba(255, 255, 255, 0.8);
+width: 1000px;
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.8); /* اللون الأبيض مع شفافية */
+    color: #333;
+    font-size: 20px;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* إضافة ضباب خفيف حول الحواف */
+
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 1); /* تفاعل عند المرور بالفأرة */
+    color: #000;
+}
+/* تصميم الشريط الجانبي */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; /* يمكن تغييره إلى right: 0; ليكون على اليمين */
+  width: 50px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+/* الشريط الجانبي الأساسي */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 63px;
+  width: 50px; /* عرض صغير */
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: width 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
+/* عندما تمر الفأرة، يصبح أعرض */
+.sidebar:hover {
+  width: 200px; /* عرض أكبر */
+  overflow: visible;
+}
+
+/* تصميم الأزرار */
+.sidebar a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  width: 100%;
+  transition: background 0.3s;
+}
+
+/* أيقونات */
+.sidebar a i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* النص يكون مخفي في الحالة العادية */
+.sidebar a span {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+/* عند تمرير الفأرة، يظهر النص */
+.sidebar:hover a span {
+  opacity: 1;
+}
+hr{
+  color: black;
+}
+/* تنسيق زر اللغة */
+.lang-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-button {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-width: 120px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+/* عند تفعيل القائمة */
+.show {
+  display: block;
+}
+
+    .lang-menu {
+        position: relative;
+        display: inline-block;
+    }
+
+    .lang-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 20px;
+        padding: 5px;
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+          background-color: rgba(255, 255, 255, 0.9);
+        min-width: 120px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown a {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+    }
+
+    .dropdown a:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+
+
+    }
+
+    .dropdown .flag-icon {
+        margin-right: 5px;
+    }
+
+    .show {
+        display: block;
+    }
+    *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --accent-color: #641BFF;
+    --heading-font-family: 'Poppins', sans-serif;
+    --body-font-family: 'Lato', sans-serif;
+  }
+
+
+
+  .price-comparison {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    margin: 1rem;
+      gap: 50px;
+      font-family: fantasy;
+
+
+
+  }
+
+  .price-column {
+background-background-color: #F5F5DC; /* أبيض مائل للكريمي */
+
+    box-shadow: 0 7px 30px rgba(52, 31, 97, 0.1);
+    padding: 2rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 400px;
+    border-radius: 8px;
+
+  }
+
+
+  .price-column2 {
+  background-background-color: #F5F5DC; /* أبيض مائل للكريمي */
+
+    box-shadow: 0 7px 30px rgba(52, 31, 97, 0.1);
+    padding: 2rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 600px;
+    border-radius: 8px;
+
+  }
+
+  .price-column3 {
+  background-background-color: #F5F5DC; /* أبيض مائل للكريمي */
+
+    box-shadow: 0 7px 30px rgba(52, 31, 97, 0.1);
+    padding: 2rem;
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 96%;
+    border-radius: 8px;
+
+  }
+
+
+
+
+  .price-column.popular {
+ background-color: rgba(255, 215, 0, 0.7);
+    position: relative;
+    background-color: var(--accent-color);
+    box-shadow: 0 7px 30px rgba(52, 13, 135, 0.3);
+    color: white;
+    margin-top: -1.5rem;
+    padding-top: 3.5rem;
+    margin-bottom: -1.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .price-column:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .price-column:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .price-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--heading-font-family);
+    font-weight: bold;
+  }
+
+  .price {
+    font-size: 3.5rem;
+    display: flex;
+  }
+
+  .dollar-sign {
+    font-size: 1.5rem;
+    margin-top: .5rem;
+    margin-right: .25rem;
+  }
+
+  .per-month {
+    font-size: .75rem;
+    align-self: flex-end;
+    margin-bottom: 1.1rem;
+    text-transform: uppercase;
+  }
+
+  .plan-name {
+    text-transform: uppercase;
+    font-size: .9rem;
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  .divider {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .price-column.popular .divider {
+    background-color: rgba(255, 255, 255, .2);
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+
+  }
+
+  .feature img {
+    height: 1.1em;
+    width: 1.1em;
+    margin-right: .5rem;
+  }
+
+  .feature.inactive {
+    color: #999;
+    text-decoration-line: line-through;
+  }
+
+.most-popular {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    right: .5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--heading-font-family);
+  }
+
+  .cta {
+  border: none;
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: .75rem 1rem;
+  cursor: pointer;
+  font-family: var(--heading-font-family);
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 3rem;
+  transition: 100ms;
+  transform: scale(1);
+}
+
+.price-column.popular .cta {
+  background-color: white;
+  color: var(--accent-color);
+}
+
+.cta:hover, .cta:focus {
+  transform: scale(1.03);
+}
+
+
+
+
+
+
+
+
+  .search-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      border: 2px solid #ccc;
+      border-radius: 25px;
+      padding: 10px;
+      width: 500px;
+      background: white;
+      height: 50px;
+  }
+
+  .search-input {
+      border: none;
+      outline: none;
+      flex: 1;
+      padding: 10px;
+      font-size: 18px;
+      color: #333;
+      background: none;
+  }
+
+  .search-icon {
+      cursor: pointer;
+      font-size: 20px;
+      color: #555;
+      padding: 5px;
+  }
+
+  /* تصميم قائمة الاقتراحات */
+  #suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 0 0 10px 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: none;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      color: black;
+      font-size: 18px;
+  }
+
+  #suggestions li {
+      padding: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+  }
+
+  #suggestions li:hover {
+      background: #f0f0f0;
+  }
+
+
+
+
+  #suggestions li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+  }
+
+  #suggestions li i {
+      color: #007bff;
+      font-size: 18px;
+  }
+
+
+
+
+
+
+  /* تحسين التوافق مع الهواتف */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+        height: auto;
+    }
+
+    .navbar a {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
+    .social-media {
+        width: 150px;
+        height: auto;
+    }
+
+    .image-container {
+        height: 50vh;
+    }
+
+    .price-comparison {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .price-column {
+        max-width: 100%;
+        width: 90%;
+    }
+
+    .sidebar {
+        width: 40px;
+    }
+
+    .sidebar:hover {
+        width: 150px;
+    }
+
+    .search-container {
+        width: 90%;
+    }

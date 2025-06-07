@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 80px;
+
+}
+
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 12px;
+  background-color: wiht;
+  border-radius: 20px;
+
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.wrapper .footer-widget {
+  width: calc(20% - 30px);
+  margin: 0 15px 50px;
+  padding: 0 12px;
+  margin-top: 30px;
+}
+
+.wrapper .footer-widget:nth-child(1) {
+  width: calc(40% - 50px);
+  margin-right: 15px;
+}
+
+.wrapper .footer-widget .logo {
+  margin-bottom: 30px;
+  vertical-align: middle;
+}
+
+.wrapper .footer-widget p {
+  margin-bottom: 30px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.wrapper .footer-widget .socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.wrapper .footer-widget .socials li {
+  list-style: none;
+}
+
+.wrapper .footer-widget .socials li a {
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+  color: #ffffff;
+  background-color: black;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-out;
+}
+
+.wrapper .footer-widget .socials li a:hover {
+  background-color: #D3D3D3;
+}
+
+.wrapper .footer-widget h6 {
+  color: #585978;
+  margin: 10px 0 35px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.wrapper .footer-widget .links li {
+  list-style: none;
+}
+
+.wrapper .footer-widget .links li a {
+  color: #585978;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: capitalize;
+  line-height: 32px;
+  transition: all 0.3s ease-out;
+}
+
+.wrapper .footer-widget .links li a:hover {
+  color: #037ef3;
+}
+
+.copyright-wrapper {
+  padding: 20px 0;
+  border-top: 1px solid rgba(88, 89, 120, 0.4);
+  background-color: black;
+  border-radius: 20px;
+  margin-bottom: 20px;
+
+
+}
+
+.copyright-wrapper p {
+
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+}
+
+.copyright-wrapper p a {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.copyright-wrapper p a:hover {
+  color: #037ef3;
+}
+
+/* Let's write the media query */
+@media (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .wrapper .footer-widget,
+  .wrapper .footer-widget:nth-child(1) {
+    width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .wrapper .footer-widget,
+  .wrapper .footer-widget:nth-child(1) {
+    width: 100%;
+    margin: 0 10px 50px;
+  }
+}
+
+
+
+
+.main-container4 {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 99%; /* إضافة هامش بسيط عن الحواف */
+    margin: 1rem auto; /* توسيط الحاوية الكبيرة */
+      background-color: #FFFFFF;
+}
+
+.image-container1, .image-container2 {
+    width: 70%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 15px; /* حواف مستديرة للصورة */
+    margin: 0; /* إزالة المسافات من حول الصورة */
+    overflow: hidden; /* إخفاء أي جزء من الصورة يتجاوز الحواف المستديرة */
+      background-color: #FFFFFF;
+}
+
+.image-container1 {
+  background-color: #FFFFFF;
+
+}
+
+.image-container2 {
+    background-color: #FFFFFF;
+}
+
+.custom-overlay {
+    position: absolute;  /* يتم تحديد مكان الحاوية بشكل مطلق بالنسبة لأقرب حاوية ذات position غير "static" (مثل الحاوية الأم). */
+    top: 0;              /* يجعل الحاوية تبدأ من أعلى العنصر الأم. */
+    left: 0;             /* يجعل الحاوية تبدأ من الجهة اليسرى من العنصر الأم. */
+    width: 100%;         /* عرض الحاوية هو 100% من عرض العنصر الأم. */
+    height: 100%;        /* ارتفاع الحاوية هو 100% من ارتفاع العنصر الأم. */
+    background: rgba(0, 0, 0, 0.5); /* خلفية داكنة (شفافة بنسبة 50%) تعطي تأثير الظل على الصورة. */
+      background-color: #FFFFFF;
+    display: flex;       /* يستخدم flexbox لترتيب العناصر بداخله. */
+    justify-content: center; /* يحرك المحتوى في الحاوية إلى المنتصف أفقيًا. */
+    align-items: flex-start; /* يحرك المحتوى في الحاوية إلى الأعلى (في الأعلى وليس المركز). */
+    padding-top: 20px;    /* إضافة مسافة (حشوة) من أعلى الحاوية. */
+}
+
+.content1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* يركز الحاوية في المركز */
+    width: 90%; /* عرض الحاوية أصغر من الصورة */
+    height: 90%;
+      background: rgba(255, 255, 255, 0.5); /* خلفية بيضاء شفافة */
+    padding: 20px;
+    border-radius: 15px; /* حواف مستديرة */
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.description1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+}
+
+.button1 {
+  position: absolute; /* وضع الزر بشكل مطلق */
+  bottom: 20px; /* إبقاء الزر في الأسفل مع مسافة من الحافة */
+  left: 50%;
+  transform: translateX(-50%); /* لتحريك الزر إلى المركز الأفقي */
+  background-color: black; /* خلفية سوداء */
+  color: #fff; /* اللون الأبيض للنص */
+  font-size: 18px; /* حجم الخط */
+  padding: 10px 20px; /* مسافة صغيرة حول النص */
+  text-decoration: none;
+  border-radius: 5px; /* حواف دائرية بسيطة */
+  transition: background-color 0.3s ease;
+  width:90%; /* عرض الزر يعتمد على النص داخله */
+  min-width: 150px; /* عرض الزر الأدنى */
+  text-align: center; /* محاذاة النص في الوسط */
+}
+
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+}
+
+
+
+
+
+
+/* تخصيص حاوية الأزرار */
+.box-container12 {
+    width: 100%; /* عرض الحاوية من الحافة إلى الحافة */
+    height: 50px; /* طول الحاوية 5 سم (50px) */
+    display: flex;
+    justify-content: space-around; /* توزيع الأزرار بشكل متساوٍ */
+    align-items: center;
+    background-color: #ffffff; /* لون الخلفية بلون بسيط */
+    padding: 10px 0;
+    box-sizing: border-box;
+    margin-top: 20px;
+    gap: 80px;
+}
+.containerc {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 45px;
+    }
+
+    .item1 {
+
+
+      gap: 9px;
+    }
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .red {  background: #3f90b5;
+  background: linear-gradient(90deg, rgba(63, 144, 181, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%); }
+    .blue { background: #9adbf5;
+  background: linear-gradient(90deg, rgba(154, 219, 245, 1) 0%, rgba(143, 199, 168, 1) 50%, rgba(247, 244, 203, 1) 100%); }
+    .green {   background: #020024;
+      background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(31, 191, 196, 0.78) 0%, rgba(86, 254, 204, 1) 100%, rgba(84, 192, 255, 1) 100%); }
+    .orange {   background: #200024;
+    background: linear-gradient(90deg, rgba(32, 0, 36, 1) 0%, rgba(139, 110, 224, 0.78) 0%, rgba(243, 192, 252, 1) 100%, rgba(240, 86, 254, 1) 100%, rgba(84, 192, 255, 1) 100%); }
+     .black {  background: #241400;
+     background: linear-gradient(90deg, rgba(36, 20, 0, 1) 0%, rgba(196, 191, 96, 0.78) 0%, rgba(224, 203, 108, 1) 100%, rgba(254, 218, 86, 1) 100%, rgba(255, 224, 84, 1) 100%);}
