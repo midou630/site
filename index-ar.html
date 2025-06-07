@@ -10,8 +10,8 @@
 <link rel="shortcut icon" href="/favicon.ico" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="index-ar-en-fr-css/style.css">
-
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="footer/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="https://fonts.googleapis.com/css?family=loto|poppins&display=swap" href="stylesheet">
@@ -72,6 +72,7 @@
       </a>
 
 
+
         <nav class="navbar">
 
 
@@ -98,23 +99,24 @@
 
         </nav>
 
-        <div class="social-media">
-            <a href="#"><i class='bx bxl-tiktok'></i></a>
-            <a href="#"><i class='bx bxl-youtube' ></i></a>
-            <a href="#"><i class='bx bxl-facebook'></i></a>
-            <a href="#"><i class='bx bxl-instagram'></i></a>
-        </div>
+        <div class="social-media hidden md:flex gap-4">
+      <a href="#"><i class='bx bxl-tiktok'></i></a>
+      <a href="#"><i class='bx bxl-youtube'></i></a>
+      <a href="#"><i class='bx bxl-facebook'></i></a>
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+
+    </div>
+
     </header>
 
 
     <div class="image-container">
         <div class="overlay">
-            <div class="text">
-                <p>
-                  "يستحق عملك حماية قانونية توازي طموحاته.
-                  نحن نقدم خدمات قانونية مصممة خصيصًا لك — من العقود المحكمة والاستشارات المتخصصة إلى الالتزام القانوني، والتحقيقات الداخلية، وإنقاذ الشركات — لتتمكن من التركيز على النمو وأنت مطمئن البال."<br>-<i class='bx bx-broadcast'></i>-
-</p>
-            </div>
+          <div class="text">
+              <h3>
+              خل عندك شركة فكرة او مشروع نحن اول مكتب متخصص يقدم لك حلول متكاملة لدعم شركتك مؤسساتيا اداريا قانويا بصريا <br>-<i class='bx bx-broadcast'></i>-
+</h3>
+          </div>
             <div class="search-container">
          <input type="text" class="search-input" id="searchBox" placeholder="">
          <span class="search-icon"><i class='bx bx-search-alt-2'></i></span>
@@ -126,22 +128,43 @@
 
 
 
-    <div class="box-container12">
-  <h5> تخصيص <i class='bx bx-edit-alt' ></i>  </h5>
-  <h5> موثوقية <i class='bx bxs-id-card' ></i></h5>
-    <h5>  امان  <i class='bx bx-shield-alt-2' ></i></h5>
-    <h5>  حماية  <i class='bx bx-error-alt' ></i></h5>
-      <h5> سلاسة <i class='bx bx-notepad'></i></h5>
+
+
+    <section class="price-comparison">
+      <div class="price-column3" style="border-radius: 20px;">
+        <div class="price-header">
+          <div class="price">
+            <div class="dollar-sign">هل قمت بحجز موعد؟ استفد الآن من استشارتك بعد أن نتواصل معك. <i class='bx bxl-zoom'></i></div>
+          </div>
+        </div>
+    <div class="divider"></div>
+        <div class="feature" dir="rtl">
+          <img src="check-circle.svg">
+         <h4>  اضغط على الزر أدناه</h4>
+        </div>
+        <div class="feature" dir="rtl">
+          <img src="check-circle.svg">
+     <h4>  أدخل الرمز الذي استلمته عبر البريد الإلكتروني</h4>
+        </div>
+
+        <div class="feature" dir="rtl">
+          <img src="check-circle.svg">
+       <h4>  استفد من استشارتك القانونية.</h4>
+        </div>
+
+        <div class="feature" dir="rtl">
+          <img src="check-circle.svg">
+       <h4>  في حال حدوث أي سلوك غير لائق من طرف المستشار أو وجود مشكلات تقنية، لا تتردد في رفع شكواك عبر مركز الدعم.</h4>
+        </div>
+
+        <button class="cta" onclick="location.href='Service-index/meeting-ar.html';">Start Today    <i class='bx bxs-log-in-circle'></i></button>
+
 
     </div>
+    </section>
 
-    <div class="video-container">
-      <video id="heroVideo" autoplay loop muted playsinline>
-        <source src="video.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-      </video>
-      <button class="unmute-btn" onclick="unmuteVideo()">تشغيل الصوت 🔊</button>
-    </div>
+
+
 
     <section class="price-comparison">
       <div class="price-column2" style="border-radius: 20px;">
@@ -336,28 +359,7 @@
  </section>
 
 
- <div class="containerc">
-    <div class="item1">
-      <div class="circle red"></div>
-      <span>  <h3>  استشارة قانونية عن بعد <i class='bx bx-notepad'></i></h3></span>
-    </div>
-    <div class="item1">
-      <div class="circle blue"></div>
-      <span>   <h3>   استشارة المكتب المتنقل. <i class='bx bx-buildings'></i></h3></span>
-    </div>
-    <div class="item1">
-      <div class="circle green"></div>
-      <span>   <h3>   طلب انشاء شركة جديدة  <i class='bx bx-book-content'></i></h3></span>
-    </div>
-    <div class="item1">
-      <div class="circle orange"></div>
-      <span>  <h3>     طلب تحقيق في فساد داخلي  <i class='bx bx-check-shield'></i></h3></span>
-    </div>
-    <div class="item1">
-      <div class="circle black"></div>
-      <span>   <h3>   طلب اسعاف شركتك  <i class='bx bx-shield-plus'></i></h3></span>
-    </div>
-  </div>
+
 
     <footer>
       <div class="container">
@@ -369,7 +371,7 @@
             <p class="desc">
 
 <h4>  "نحن هنا لتحويل التحديات القانونية إلى فرص، وحماية شركتك من أي أزمة قد تواجهها." </h4>
-            </p>
+
             <ul class="socials">
               <li>
                 <a href="#">
@@ -446,6 +448,17 @@
             }
         }
     </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navbar = document.querySelector('.navbar');
+
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  });
+</script>
+
     <script>
       function unmuteVideo() {
         const video = document.getElementById('heroVideo');
