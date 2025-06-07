@@ -1,458 +1,0 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>ARBICORP</title>
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="shortcut icon" href="/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-<link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="index-ar-en-fr-css/style.css">
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="https://fonts.googleapis.com/css?family=loto|poppins&display=swap" href="stylesheet">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome CDN Link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- stylesheet -->
-    <link rel="stylesheet" href="footer-css/style.css" />
-    <style>
-  .video-container {
-    position: relative;
-    width: 100%;
-    height: 120vh;
-    overflow: hidden;
-
-  }
-
-  .video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
-  }
-
-  .unmute-btn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    z-index: 2;
-  }
-</style>
-</head>
-<body>
-
-    <header class="header">
-
-            <a href="index-ar.html" class="logo">
-        <img src="favicon.ico" alt="Logo" class="logo-icon">
-        <a href="index-ar.html" class="logo">ARBICORP</a>
-      </a>
-
-
-        <nav class="navbar">
-
-
-          <a href="index-ar.html">  الرئيسية  <i class='bx bx-home-alt'></i> </a>
-          <a href="#"><i class='bx bx-hard-hat'></i> من نحن </a>
-          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=abdelhamidstartup@gmail.com" target="_blank">
-  <i class='bx bx-chat'></i> تواصل
-  </a>
-
-          <a href="service-index/cons-remot-ar.html"><i class='bx bxs-chalkboard'></i> استشارة </a>
-
-  <a href="service-index/meeting-ar.html"><i class='bx bx-slideshow'></i> مقابلة </a>
-            <!-- زر اختيار اللغة -->
-            <div class="lang-menu">
-                <button class="lang-button" onclick="toggleDropdown()">
-                    <span class="flag-icon flag-icon-dz"></span>
-                </button>
-                <div class="dropdown" id="langDropdown">
-                    <a href="index-ar.html"><span class="flag-icon flag-icon-dz"></span> العربية</a>
-                    <a href="index.html"><span class="flag-icon flag-icon-us"></span> English</a>
-
-                </div>
-            </div>
-
-        </nav>
-
-        <div class="social-media">
-            <a href="#"><i class='bx bxl-tiktok'></i></a>
-            <a href="#"><i class='bx bxl-youtube' ></i></a>
-            <a href="#"><i class='bx bxl-facebook'></i></a>
-            <a href="#"><i class='bx bxl-instagram'></i></a>
-        </div>
-    </header>
-
-
-    <div class="image-container">
-        <div class="overlay">
-            <div class="text">
-                <p>
-                  "يستحق عملك حماية قانونية توازي طموحاته.
-                  نحن نقدم خدمات قانونية مصممة خصيصًا لك — من العقود المحكمة والاستشارات المتخصصة إلى الالتزام القانوني، والتحقيقات الداخلية، وإنقاذ الشركات — لتتمكن من التركيز على النمو وأنت مطمئن البال."<br>-<i class='bx bx-broadcast'></i>-
-</p>
-            </div>
-            <div class="search-container">
-         <input type="text" class="search-input" id="searchBox" placeholder="">
-         <span class="search-icon"><i class='bx bx-search-alt-2'></i></span>
-         <ul id="suggestions"></ul> <!-- قائمة الاقتراحات -->
-     </div>
-
-</div>
-    </div>
-
-
-
-    <div class="box-container12">
-  <h5> تخصيص <i class='bx bx-edit-alt' ></i>  </h5>
-  <h5> موثوقية <i class='bx bxs-id-card' ></i></h5>
-    <h5>  امان  <i class='bx bx-shield-alt-2' ></i></h5>
-    <h5>  حماية  <i class='bx bx-error-alt' ></i></h5>
-      <h5> سلاسة <i class='bx bx-notepad'></i></h5>
-
-    </div>
-
-    <div class="video-container">
-      <video id="heroVideo" autoplay loop muted playsinline>
-        <source src="video.mp4" type="video/mp4">
-        متصفحك لا يدعم الفيديو.
-      </video>
-      <button class="unmute-btn" onclick="unmuteVideo()">تشغيل الصوت 🔊</button>
-    </div>
-
-    <section class="price-comparison">
-      <div class="price-column2" style="border-radius: 20px;">
-        <div class="price-header">
-          <div class="price">
-            <div class="dollar-sign">استشارة قانونية عن بعد  <i class='bx bx-notepad'></i></div>
-          </div>
-        </div>
-    <div class="divider"></div>
-        <div class="feature">
-          <img src="check-circle.svg">
-      <h4>  تواصل مباشر مع محامي مختص عبر الفيديو او حتى الهاتف</h4>
-        </div>
-        <div class="feature">
-<img src="check-circle.svg">
-      <h4>  اجابات سريعة على انشغالاتك و استفساراتك القانونية</h4>
-
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-        <h4>    نُقدّم جدولًا مرنًا يتناسب مع مواعيدك المتاحة.</h4>
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-      <h4>    الخدمة المثالية للشركات البعيدة جغرافيًا أو ذات الوقت المحدود.</h4>
-        </div>
-
-        <button class="cta" onclick="location.href='Service-index/cons-remot-ar.html';">ابدا الان   <i class='bx bxs-log-in-circle'></i></button>
-      </div>
-      <div class="price-column2" style="border-radius: 20px;">
-        <div class="price-header">
-          <div class="price">
-            <div class="dollar-sign">طلب خدمة المكتب المتنقل  <i class='bx bx-buildings'></i></div>
-          </div>
-        </div>
-    <div class="divider"></div>
-        <div class="feature">
-          <img src="check-circle.svg">
-      <h4>  محامٍ يزور مقر شركتك أو أي موقع تختاره</h4>
-        </div>
-        <div class="feature">
-          <img src="check-circle.svg">
-        <h4>    استشارة قانونية تُقدَّم في بيئة عملك الفعلية</h4>
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-    <h4>    مراجعة ميدانية للملفات والمستندات داخل مقرك</h4>
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-        <h4>  توفّر الوقت والجهد على أصحاب الأعمال</h4>
-        </div>
-
-        <button class="cta" onclick="location.href='service-index/cons-ar.html';">ابدا الان   <i class='bx bxs-log-in-circle'></i></button>
-      </div>
-
-    </div>
-    </section>
-
-
-    <section class="price-comparison">
-      <div class="price-column" style="border-radius: 20px;">
-        <div class="price-header">
-          <div class="price">
-            <div class="dollar-sign">طلب انشاء شركة جديدة  <i class='bx bx-book-content'></i></div>
-          </div>
-        </div>
-<div class="divider"></div>
-        <div class="feature">
-          <img src="check-circle.svg">
-  <h4>  استشارة قانونية حول أفضل نوع من الشركات لإنشائها</h4>
-        </div>
-        <div class="feature">
-          <img src="check-circle.svg">
-<h4>الحصول على التراخيص والتصاريح المطلوبة من الجهات  الحكومية المختصة</h4>
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-    <h4>  اختيار افضل اسم لمشروعك و تسجيله رسميا</h4>
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-    <h4>  تأسيس الشركة من الصفر نيابة عنك من خلال عقد توكيل رسمي</h4>
-        </div>
-
-        <button class="cta" onclick="location.href='service-index/request-ar.html';">ابدا الان   <i class='bx bxs-log-in-circle'></i></button>
-      </div>
-      <div class="price-column" style="border-radius: 20px;">
-        <div class="price-header">
-          <div class="price">
-            <div class="dollar-sign">التحقيق في الفساد داخل شركات الخواص  <i class='bx bx-check-shield'></i></div>
-          </div>
-        </div>
-  <div class="divider"></div>
-        <div class="feature">
-          <img src="check-circle.svg">
-  <h4>  إجراء تحقيقات داخلية سرية للكشف عن حالات الفساد</h4>
-        </div>
-        <div class="feature">
-          <img src="check-circle.svg">
-
-<h4>دعم الشركة في إدارة الأزمات والتعامل مع تداعيات الفساد</h4>
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-      <h4>  تقديم توصيات لتحسين أنظمة الرقابة الداخلية لمنع الفساد في المستقبل</h4>
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-      <h4>  التعاون مع السلطات المعنية عند الحاجة إلى اتخاذ إجراءات قانونية</h4>
-        </div>
-
-        <button class="cta" onclick="location.href='service-index/cora-ar.html';">ابدا الان   <i class='bx bxs-log-in-circle'></i></button>
-      </div>
-      <div class="price-column" style="border-radius: 20px;">
-        <div class="price-header">
-          <div class="price">
-            <div class="dollar-sign">اسعاف الشركات المتعثرة <i class='bx bx-shield-plus'></i></div>
-          </div>
-        </div>
-<div class="divider"></div>
-        <div class="feature">
-          <img src="check-circle.svg">
-
-<h4>تطوير استراتيجيات لإعادة هيكلة الشركة في مواجهة التحديات القانونية</h4>
-        </div>
-        <div class="feature">
-          <img src="check-circle.svg">
-      <h4>  دفاع عن الشركة ضد الدعاوى القضائية أو القضايا القانونية الكبيرة</h4>
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-      <h4>  العمل على حماية مصالح الشركة والحفاظ على سمعتها القانونية</h4>
-        </div>
-
-        <div class="feature">
-          <img src="check-circle.svg">
-      <h4>  تقديم الدعم القانوني السريع في أوقات الأزمات القانونية</h4>
-        </div>
-
-        <button class="cta" onclick="location.href='service-index/is3af-ar.html';">ابدا الان   <i class='bx bxs-log-in-circle'></i></button>
-      </div>
-
-
- </div>
-
-
-</section>
-
-
-
- <section class="price-comparison">
-   <div class="price-column3" style="border-radius: 20px;">
-     <div class="price-header">
-       <div class="price">
-         <div class="dollar-sign">هل قمت بحجز موعد؟ استفد الآن من استشارتك بعد أن نتواصل معك. <i class='bx bxl-zoom'></i></div>
-       </div>
-     </div>
- <div class="divider"></div>
-     <div class="feature" dir="rtl">
-       <img src="check-circle.svg">
-      <h4>  اضغط على الزر أدناه</h4>
-     </div>
-     <div class="feature" dir="rtl">
-       <img src="check-circle.svg">
-  <h4>  أدخل الرمز الذي استلمته عبر البريد الإلكتروني</h4>
-     </div>
-
-     <div class="feature" dir="rtl">
-       <img src="check-circle.svg">
-    <h4>  استفد من استشارتك القانونية.</h4>
-     </div>
-
-     <div class="feature" dir="rtl">
-       <img src="check-circle.svg">
-    <h4>  في حال حدوث أي سلوك غير لائق من طرف المستشار أو وجود مشكلات تقنية، لا تتردد في رفع شكواك عبر مركز الدعم.</h4>
-     </div>
-
-     <button class="cta" onclick="location.href='Service-index/meeting-ar.html';">Start Today    <i class='bx bxs-log-in-circle'></i></button>
-
-
- </div>
- </section>
-
-
- <div class="containerc">
-    <div class="item1">
-      <div class="circle red"></div>
-      <span>  <h3>  استشارة قانونية عن بعد <i class='bx bx-notepad'></i></h3></span>
-    </div>
-    <div class="item1">
-      <div class="circle blue"></div>
-      <span>   <h3>   استشارة المكتب المتنقل. <i class='bx bx-buildings'></i></h3></span>
-    </div>
-    <div class="item1">
-      <div class="circle green"></div>
-      <span>   <h3>   طلب انشاء شركة جديدة  <i class='bx bx-book-content'></i></h3></span>
-    </div>
-    <div class="item1">
-      <div class="circle orange"></div>
-      <span>  <h3>     طلب تحقيق في فساد داخلي  <i class='bx bx-check-shield'></i></h3></span>
-    </div>
-    <div class="item1">
-      <div class="circle black"></div>
-      <span>   <h3>   طلب اسعاف شركتك  <i class='bx bx-shield-plus'></i></h3></span>
-    </div>
-  </div>
-
-    <footer>
-      <div class="container">
-        <div class="wrapper">
-          <div class="footer-widget">
-            <a href="#">
-              <img src="images/logo.png" class="logo" />
-            </a>
-            <p class="desc">
-
-<h4>  "نحن هنا لتحويل التحديات القانونية إلى فرص، وحماية شركتك من أي أزمة قد تواجهها." </h4>
-            </p>
-            <ul class="socials">
-              <li>
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-widget">
-            <h6>روابط سريعة</h6>
-            <ul class="links">
-              <li><a href="#"> <h4> الرئيسية </h4> </a></li>
-              <li><a href="#"> <h4> من نحن </h4> </a></li>
-              <li><a href="#"> <h4> تواصل </h4> </a></li>
-            </ul>
-          </div>
-
-          <div class="footer-widget">
-            <h6>الخدمات</h6>
-            <ul class="links">
-              <li><a href="#"> <h4> استشارة عن بعد  </h4> </a></li>
-              <li><a href="#"> <h4>  المكتب المتنقل   </h4> </a></li>
-              <li><a href="#"> <h4>  طلب انشاء شركة  </h4>  </a></li>
-              <li><a href="#"> <h4>  تحقيق في الفساد </h4>  </a></li>
-              <li><a href="#"> <h4>  اسعاف الشركات   </h4> </a></li>
-            </ul>
-          </div>
-
-          <div class="footer-widget">
-            <h6>مساعدة و دعم</h6>
-            <ul class="links">
-              <li><a href="#"> <h4> مركز الدعم </h4> </a></li>
-              <li><a href="#"> <h4> مقابلة عن بعد  </h4> </a></li>
-              <li><a href="#"> <h4>  الخصوصية و الامان  </h4> </a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="copyright-wrapper">
-          <p>
-            Design and Developed by
-            <a href="#">kitouni abdelhamid</a>
-          </p>
-        </div>
-      </div>
-    </footer>
-
-
-
-
-    <script>
-        function toggleDropdown() {
-            document.getElementById("langDropdown").classList.toggle("show");
-        }
-
-        // إغلاق القائمة عند الضغط خارجها
-        window.onclick = function(event) {
-            if (!event.target.closest('.lang-menu')) {
-                document.getElementById("langDropdown").classList.remove("show");
-            }
-        }
-    </script>
-    <script>
-      function unmuteVideo() {
-        const video = document.getElementById('heroVideo');
-        video.muted = false;
-        video.play();
-      }
-    </script>
- <script src="script/script1.js"></script> <!-- ربط ملف JavaScript -->
-</body>
-</html>
