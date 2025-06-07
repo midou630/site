@@ -1,0 +1,8 @@
+.image-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/image53.jpg'); /* رابط الصورة الخاصة بك */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
