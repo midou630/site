@@ -11,15 +11,17 @@ footer {
   height: auto;
   padding-top: 80px;
 
+
 }
 
-.container {
+.container12 {
   width: 100%;
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 12px;
   background-color: wiht;
   border-radius: 20px;
+
 
 }
 
