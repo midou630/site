@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+
+
+
+button {
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 8%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* إضافة ضباب خفيف حول الحواف */
+
+}
+
+.logo{
+  font-size: 25px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: time new romen;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 120px;
+}
+
+.navbar-logo-icon {
+  height: 28px;
+}
+
+@media only screen and (min-width: 400px) {
+  .navbar-logo-icon {
+    height: 24px;
+  }
+}
+
+.navbar-logo-text {
+  display: none;
+  height: 19px;
+}
+
+@media only screen and (min-width: 400px) {
+  .navbar-logo-text {
+    display: block;
+  }
+}
+
+.navbar-menu {
+  display: flex;
+  transition: 0.3s;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-menu {
+    flex: 1 1 auto;
+    justify-content: center;
+    margin-right: 120px;
+  }
+}
+
+.navbar-menu > button {
+  position: relative;
+  flex: 0 0 36px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  height: 72px;
+  width: 36px;
+  opacity: 0.3;
+}
+
+.navbar-menu > button.active {
+  opacity: 1;
+}
+
+.navbar-menu > button.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  translate: -50% 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #36b7ee;
+}
+
+@media only screen and (min-width: 600px) {
+  .navbar-menu > button:last-child {
+    position: absolute;
+    right: 20px;
+  }
+}
