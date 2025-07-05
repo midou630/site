@@ -19,9 +19,11 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/gh/alif-type/amiri-font@latest/css/amiri.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Changa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/gh/alif-type/amiri-font@latest/css/amiri.css" rel="stylesheet">
+
 
 <!--
 
@@ -30,6 +32,12 @@ TemplateMo 586 Scholar
 https://templatemo.com/tm-586-scholar
 
 -->
+
+<style>
+.icon:hover {
+      background-color: #007ba7; /* لون مختلف عند التمرير */
+    }
+  </style>
   </head>
 
 <body>
@@ -55,7 +63,7 @@ https://templatemo.com/tm-586-scholar
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        <h1>Scholar</h1>
+                        <h1>ARBICORP</h1>
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Serach Start ***** -->
@@ -68,12 +76,12 @@ https://templatemo.com/tm-586-scholar
                     <!-- ***** Serach Start ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                      <li class="scroll-to-section"><a href="#services">Services</a></li>
-                      <li class="scroll-to-section"><a href="#courses">Courses</a></li>
-                      <li class="scroll-to-section"><a href="#team">Team</a></li>
-                      <li class="scroll-to-section"><a href="#events">Events</a></li>
-                      <li class="scroll-to-section"><a href="#contact">Register Now!</a></li>
+                      <li class="scroll-to-section"><a href="#top" class="active">الرئيسية</a></li>
+                      <li class="scroll-to-section"><a href="#services">الخدمات</a></li>
+                      <li class="scroll-to-section"><a href="#courses">من نحن</a></li>
+                      <li class="scroll-to-section"><a href="#team">الفريق</a></li>
+                      <li class="scroll-to-section"><a href="#events">تواصل الان</a></li>
+                      <li class="scroll-to-section"><a href="#contact">إحجز الان!</a></li>
                   </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -91,48 +99,23 @@ https://templatemo.com/tm-586-scholar
       <div class="row">
         <div class="col-lg-12">
           <div class="owl-carousel owl-banner">
-            <div class="item item-1">
-              <div class="header-text">
-                <span class="category" style="background-color: #003366;">Our Courses</span>
-                <h2>With Scholar Teachers, Everything Is Easier</h2>
-                <p>Scholar is free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
-                <div class="buttons">
-                  <div class="main-button">
-                    <a href="#" style="background-color: #003366;">Request Demo</a>
-                  </div>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-play"></i> What's Scholar?</a>
-                  </div>
-                </div>
-              </div>
+
+            <div class="overlay">
+            <div class="text">
+                <p>
+                  "يستحق عملك حماية قانونية توازي طموحاته.
+                  نحن نقدم خدمات قانونية مصممة خصيصًا لك — من العقود المحكمة والاستشارات المتخصصة إلى الالتزام القانوني، والتحقيقات الداخلية، وإنقاذ الشركات — لتتمكن من التركيز على النمو وأنت مطمئن البال."<br>-<i class='bx bx-broadcast'></i>-
+</p>
             </div>
-            <div class="item item-2">
-              <div class="header-text">
-                <span class="category">Best Result</span>
-                <h2>Get the best result out of your effort</h2>
-                <p>You are allowed to use this template for any educational or commercial purpose. You are not allowed to re-distribute the template ZIP file on any other website.</p>
-                <div class="buttons">
-                  <div class="main-button">
-                    <a href="#">Request Demo</a>
-                  </div>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-play"></i> What's the best result?</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item item-3">
-              <div class="header-text">
-                <span class="category">Online Learning</span>
-                <h2>Online Learning helps you save the time</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporious incididunt ut labore et dolore magna aliqua suspendisse.</p>
-                <div class="buttons">
-                  <div class="main-button">
-                    <a href="#">Request Demo</a>
-                  </div>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-play"></i> What's Online Course?</a>
-                  </div>
+            <div class="search-container">
+         <input type="text" class="search-input" id="searchBox" placeholder="">
+         <span class="search-icon"><i class='bx bx-search-alt-2'></i></span>
+         <ul id="suggestions"></ul> <!-- قائمة الاقتراحات -->
+     </div>
+
+</div>
+</div>
+
                 </div>
               </div>
             </div>
@@ -147,42 +130,42 @@ https://templatemo.com/tm-586-scholar
       <div class="row">
         <div class="col-lg-4 col-md-6">
           <div class="service-item">
-            <div class="icon">
+            <div class="icon" style="background-color: #003366;">
               <img src="assets/images/service-01.png" alt="online degrees">
             </div>
             <div class="main-content">
               <h4>Online Degrees</h4>
               <p>Whenever you need free templates in HTML CSS, you just remember TemplateMo website.</p>
               <div class="main-button">
-                <a href="#">Read More</a>
+                <a href="#" style="color: #003366;">Read More</a>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="service-item">
-            <div class="icon">
+            <div class="icon" style="background-color: #003366;">
               <img src="assets/images/service-02.png" alt="short courses">
             </div>
             <div class="main-content">
               <h4>Short Courses</h4>
               <p>You can browse free templates based on different tags such as digital marketing, etc.</p>
               <div class="main-button">
-                <a href="#">Read More</a>
+                <a href="#" style="color: #003366;">Read More</a>
               </div>
             </div>
           </div>
         </div>
         <div class="col-lg-4 col-md-6">
           <div class="service-item">
-            <div class="icon">
+            <div class="icon" style="background-color: #003366;">
               <img src="assets/images/service-03.png" alt="web experts">
             </div>
             <div class="main-content">
               <h4>Web Experts</h4>
               <p>You can start learning HTML CSS by modifying free templates from our website too.</p>
               <div class="main-button">
-                <a href="#">Read More</a>
+                <a href="#" style="color: #003366;">Read More</a>
               </div>
             </div>
           </div>
@@ -191,11 +174,179 @@ https://templatemo.com/tm-586-scholar
     </div>
   </div>
 
+
+
+  <div class="section events" id="events">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="section-heading">
+            <h6>Schedule</h6>
+            <h2>Upcoming Events</h2>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-6">
+          <div class="item">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="image">
+                  <img src="assets/images/event-01.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <ul>
+                  <li>
+                    <span class="category">Web Design</span>
+                    <h4>UI Best Practices</h4>
+                  </li>
+                  <li>
+                    <span>Date:</span>
+                    <h6>16 Feb 2036</h6>
+                  </li>
+                  <li>
+                    <span>Duration:</span>
+                    <h6>22 Hours</h6>
+                  </li>
+                  <li>
+                    <span>Price:</span>
+                    <h6>$120</h6>
+                  </li>
+                </ul>
+                <a href="#"><i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-6">
+          <div class="item">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="image">
+                  <img src="assets/images/event-02.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <ul>
+                  <li>
+                    <span class="category">Front End</span>
+                    <h4>New Design Trend</h4>
+                  </li>
+                  <li>
+                    <span>Date:</span>
+                    <h6>24 Feb 2036</h6>
+                  </li>
+                  <li>
+                    <span>Duration:</span>
+                    <h6>30 Hours</h6>
+                  </li>
+                  <li>
+                    <span>Price:</span>
+                    <h6>$320</h6>
+                  </li>
+                </ul>
+                <a href="#"><i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-6">
+          <div class="item">
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="image">
+                  <img src="assets/images/event-03.jpg" alt="">
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <ul>
+                  <li>
+                    <span class="category">Full Stack</span>
+                    <h4>Web Programming</h4>
+                  </li>
+                  <li>
+                    <span>Date:</span>
+                    <h6>12 Mar 2036</h6>
+                  </li>
+                  <li>
+                    <span>Duration:</span>
+                    <h6>48 Hours</h6>
+                  </li>
+                  <li>
+                    <span>Price:</span>
+                    <h6>$440</h6>
+                  </li>
+                </ul>
+                <a href="#"><i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-us section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6  align-self-center">
+          <div class="section-heading">
+            <h6>Contact Us</h6>
+            <h2>Feel free to contact us anytime</h2>
+            <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
+            <div class="special-offer">
+              <span class="offer">off<br><em>50%</em></span>
+              <h6>Valide: <em>24 April 2036</em></h6>
+              <h4>Special Offer <em>50%</em> OFF!</h4>
+              <a href="#"><i class="fa fa-angle-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-us-content">
+            <form id="contact-form" action="" method="post">
+              <div class="row">
+                <div class="col-lg-12">
+                  <fieldset>
+                    <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                  </fieldset>
+                </div>
+                <div class="col-lg-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
   <div class="section about-us">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 offset-lg-1">
-          <div class="accordion" id="accordionExample">
+          <div class="accordion" id="accordionExample" style="background-color: #00bcd4;">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
