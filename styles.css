@@ -1,4 +1,51 @@
-* {
-font-family: 'IBM Plex Sans Arabic', sans-serif;
 
+
+body {
+
+    font-family: 'Changa', sans-serif;
+
+
+}
+* {
+  font-family: 'Changa', sans-serif !important;
+  direction: rtl; /* إذا كان موقعك بالعربية */
+
+}
+
+
+
+.search-container {
+  display: flex;
+  justify-content: center; /* لتوسيطه داخل الحاوية */
+  align-items: center;
+  margin: 20px auto;
+  max-width: 700px; /* عرض أقصى */
+  border: 0.5px solid #000000;
+  border-radius: 25px;
+  overflow: hidden; /* لقص الحواف */
+  margin-top: 300px;
+}
+
+.search-container input[type="text"] {
+  border: none;
+  padding: 20px 30px;
+  flex: 1; /* يشغل كل المساحة المتاحة */
+  font-size: 16px;
+  outline: none;
+}
+
+.search-container button {
+  background-color: #fff;
+  color: #000000;
+  border: none;
+  padding: 20px 30px;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #000000;
+}
+
+.search-container i {
+  font-size: 16px;
 }
