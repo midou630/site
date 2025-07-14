@@ -1,108 +1,102 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مسح الوثيقة وإرسالها</title>
-    <style>
-        video {
-            width: 100%;
-            height: auto;
-        }
-        button {
-            margin-top: 10px;
-        }
-        #images-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .captured-image {
-            width: 100px;
-            height: auto;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>مسح الوثائق وإرسالها PDF</title>
+  <style>
+    body { font-family: sans-serif; direction: rtl; text-align: center; padding: 20px; }
+    video { width: 100%; max-width: 400px; border: 2px solid #333; }
+    #images-container { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 10px; }
+    .captured-image { width: 100px; border: 1px solid #ccc; }
+    button { margin: 10px; padding: 10px 15px; font-size: 16px; cursor: pointer; }
+  </style>
 </head>
 <body>
 
-<h1>فتح الكاميرا ورفع الوثيقة بعد مسحها</h1>
-
-<video id="video" autoplay></video>
-<button id="capture">التقاط الصورة</button>
-<button id="send">إرسال المستند</button>
+<h2>📄 مسح الوثائق وتحويلها إلى PDF</h2>
+<video id="video" autoplay muted></video><br>
+<button id="capture">📷 التقط صورة</button>
+<button id="send">📤 إرسال PDF</button>
 <div id="images-container"></div>
 
-<!-- OpenCV.js -->
-<script async src="https://docs.opencv.org/master/opencv.js"></script>
-
 <!-- EmailJS SDK -->
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="module">
+import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
+import { jsPDF } from 'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/+esm';
 
-<script>
-    // تهيئة EmailJS
-    emailjs.init('zFJcqWYZluBTdU696'); // Public Key
+emailjs.init("zFJcqWYZluBTdU696"); // مفتاحك العام
 
-    const video = document.getElementById('video');
-    const canvas = document.createElement('canvas');
-    const captureButton = document.getElementById('capture');
-    const sendButton = document.getElementById('send');
-    const imagesContainer = document.getElementById('images-container');
-    const context = canvas.getContext('2d');
+const video = document.getElementById("video");
+const captureBtn = document.getElementById("capture");
+const sendBtn = document.getElementById("send");
+const imagesContainer = document.getElementById("images-container");
 
-    let images = [];
+const images = [];
 
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-            video.srcObject = stream;
-        })
-        .catch(err => {
-            console.error('خطأ في فتح الكاميرا: ', err);
-        });
+// تشغيل الكاميرا
+navigator.mediaDevices.getUserMedia({ video: true })
+  .then(stream => { video.srcObject = stream; })
+  .catch(err => {
+    alert("⚠️ لم يتم فتح الكاميرا. تأكد من منح الإذن.");
+    console.error(err);
+  });
 
-    captureButton.addEventListener('click', () => {
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+// التقاط صورة
+captureBtn.addEventListener("click", () => {
+  const canvas = document.createElement("canvas");
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  const ctx = canvas.getContext("2d");
+  ctx.drawImage(video, 0, 0);
+  const dataUrl = canvas.toDataURL("image/jpeg", 1.0);
+  images.push(dataUrl);
 
-        const imageData = canvas.toDataURL('image/png');
-        images.push(imageData);
+  const img = document.createElement("img");
+  img.src = dataUrl;
+  img.className = "captured-image";
+  imagesContainer.appendChild(img);
+});
 
-        const imgElement = document.createElement('img');
-        imgElement.src = imageData;
-        imgElement.classList.add('captured-image');
-        imagesContainer.appendChild(imgElement);
-    });
+// إرسال PDF بالبريد
+sendBtn.addEventListener("click", async () => {
+  if (images.length === 0) {
+    alert("❗ التقط صورة واحدة على الأقل.");
+    return;
+  }
 
-    sendButton.addEventListener('click', () => {
-        const password = prompt('أدخل الرقم السري لإرسال المستند');
-        const correctPassword = '1234';
+  const password = prompt("🔒 أدخل الرقم السري لإرسال الملف:");
+  if (password !== "1234") {
+    alert("❌ الرقم السري غير صحيح.");
+    return;
+  }
 
-        if (password === correctPassword) {
-            sendEmail(images);
-        } else {
-            alert('الرقم السري غير صحيح!');
-        }
-    });
+  // إنشاء PDF
+  const pdf = new jsPDF();
+  for (let i = 0; i < images.length; i++) {
+    if (i > 0) pdf.addPage();
+    pdf.addImage(images[i], "JPEG", 10, 10, 190, 260); // حجم A4 تقريبي
+  }
 
-    function sendEmail(imagesArray) {
-        const templateParams = {
-            to_email: 'projtest630@gmail.com',
-            subject: 'مستند تم مسحه',
-            message: 'تم إرسال مستند تم مسحه عبر الموقع.',
-            attachments: imagesArray.join(',')
-        };
+  const pdfBase64 = pdf.output("datauristring"); // صيغة base64
 
-        emailjs.send('service_nzkqggq', 'template_w8hwogh', templateParams)
-            .then((response) => {
-                console.log('تم إرسال البريد الإلكتروني بنجاح: ', response);
-                alert('✅ تم إرسال المستند بنجاح');
-                images = [];
-                imagesContainer.innerHTML = '';
-            }, (error) => {
-                console.error('خطأ في إرسال البريد الإلكتروني: ', error);
-                alert('❌ حدث خطأ أثناء الإرسال');
-            });
-    }
+  // إعدادات EmailJS
+  const params = {
+    to_email: "projtest630@gmail.com",
+    subject: "📎 مستند PDF من الموقع",
+    message: "المرفق يحتوي على المستندات بصيغة PDF.",
+    attachments: pdfBase64, // المرفق بصيغة base64
+  };
+
+  try {
+    const res = await emailjs.send("service_nzkqggq", "template_w8hwogh", params);
+    alert("✅ تم الإرسال بنجاح!");
+    images.length = 0;
+    imagesContainer.innerHTML = "";
+  } catch (err) {
+    console.error(err);
+    alert("❌ فشل الإرسال. تحقق من البيانات.");
+  }
+});
 </script>
 
 </body>
