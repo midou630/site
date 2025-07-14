@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>مسح الوثائق وإرسالها PDF</title>
   <style>
     body { font-family: sans-serif; direction: rtl; text-align: center; padding: 20px; }
@@ -19,84 +19,84 @@
 <button id="send">📤 إرسال PDF</button>
 <div id="images-container"></div>
 
-<!-- EmailJS SDK -->
-<script type="module">
-import emailjs from 'https://cdn.emailjs.com/dist/email.min.mjs';
-import { jsPDF } from 'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/+esm';
+<!-- jsPDF UMD version -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-emailjs.init("zFJcqWYZluBTdU696"); // مفتاحك العام
+<!-- EmailJS SDK v4 (UMD) -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-const video = document.getElementById("video");
-const captureBtn = document.getElementById("capture");
-const sendBtn = document.getElementById("send");
-const imagesContainer = document.getElementById("images-container");
+<script>
+  const { jsPDF } = window.jspdf;
+  emailjs.init("zFJcqWYZluBTdU696"); // المفتاح العام
 
-const images = [];
+  const video = document.getElementById("video");
+  const captureBtn = document.getElementById("capture");
+  const sendBtn = document.getElementById("send");
+  const imagesContainer = document.getElementById("images-container");
+  const images = [];
 
-// تشغيل الكاميرا
-navigator.mediaDevices.getUserMedia({ video: true })
-  .then(stream => { video.srcObject = stream; })
-  .catch(err => {
-    alert("⚠️ لم يتم فتح الكاميرا. تأكد من منح الإذن.");
-    console.error(err);
+  // تشغيل الكاميرا
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(stream => { video.srcObject = stream; })
+    .catch(err => {
+      alert("⚠️ لم يتم فتح الكاميرا. تأكد من منح الإذن.");
+      console.error(err);
+    });
+
+  // التقاط صورة
+  captureBtn.addEventListener("click", () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    const ctx = canvas.getContext("2d");
+    ctx.drawImage(video, 0, 0);
+    const dataUrl = canvas.toDataURL("image/jpeg", 1.0);
+    images.push(dataUrl);
+
+    const img = document.createElement("img");
+    img.src = dataUrl;
+    img.className = "captured-image";
+    imagesContainer.appendChild(img);
   });
 
-// التقاط صورة
-captureBtn.addEventListener("click", () => {
-  const canvas = document.createElement("canvas");
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
-  const ctx = canvas.getContext("2d");
-  ctx.drawImage(video, 0, 0);
-  const dataUrl = canvas.toDataURL("image/jpeg", 1.0);
-  images.push(dataUrl);
+  // إرسال PDF بالبريد
+  sendBtn.addEventListener("click", async () => {
+    if (images.length === 0) {
+      alert("❗ التقط صورة واحدة على الأقل.");
+      return;
+    }
 
-  const img = document.createElement("img");
-  img.src = dataUrl;
-  img.className = "captured-image";
-  imagesContainer.appendChild(img);
-});
+    const password = prompt("🔒 أدخل الرقم السري لإرسال الملف:");
+    if (password !== "1234") {
+      alert("❌ الرقم السري غير صحيح.");
+      return;
+    }
 
-// إرسال PDF بالبريد
-sendBtn.addEventListener("click", async () => {
-  if (images.length === 0) {
-    alert("❗ التقط صورة واحدة على الأقل.");
-    return;
-  }
+    try {
+      const pdf = new jsPDF();
+      for (let i = 0; i < images.length; i++) {
+        if (i > 0) pdf.addPage();
+        pdf.addImage(images[i], "JPEG", 10, 10, 190, 260);
+      }
 
-  const password = prompt("🔒 أدخل الرقم السري لإرسال الملف:");
-  if (password !== "1234") {
-    alert("❌ الرقم السري غير صحيح.");
-    return;
-  }
+      const pdfBase64 = pdf.output("datauristring");
 
-  // إنشاء PDF
-  const pdf = new jsPDF();
-  for (let i = 0; i < images.length; i++) {
-    if (i > 0) pdf.addPage();
-    pdf.addImage(images[i], "JPEG", 10, 10, 190, 260); // حجم A4 تقريبي
-  }
+      const params = {
+        to_email: "projtest630@gmail.com",
+        subject: "📎 مستند PDF من الموقع",
+        message: "المرفق يحتوي على المستندات بصيغة PDF.",
+        attachments: pdfBase64
+      };
 
-  const pdfBase64 = pdf.output("datauristring"); // صيغة base64
-
-  // إعدادات EmailJS
-  const params = {
-    to_email: "projtest630@gmail.com",
-    subject: "📎 مستند PDF من الموقع",
-    message: "المرفق يحتوي على المستندات بصيغة PDF.",
-    attachments: pdfBase64, // المرفق بصيغة base64
-  };
-
-  try {
-    const res = await emailjs.send("service_nzkqggq", "template_w8hwogh", params);
-    alert("✅ تم الإرسال بنجاح!");
-    images.length = 0;
-    imagesContainer.innerHTML = "";
-  } catch (err) {
-    console.error(err);
-    alert("❌ فشل الإرسال. تحقق من البيانات.");
-  }
-});
+      const res = await emailjs.send("service_nzkqggq", "template_w8hwogh", params);
+      alert("✅ تم الإرسال بنجاح!");
+      images.length = 0;
+      imagesContainer.innerHTML = "";
+    } catch (err) {
+      console.error(err);
+      alert("❌ فشل الإرسال. تحقق من البيانات أو حجم الملف.");
+    }
+  });
 </script>
 
 </body>
