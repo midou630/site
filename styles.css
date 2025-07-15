@@ -3,12 +3,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  direction: rtl;
+text-align: right; /* اختياري حسب تصميمك */
+
 }
 
 body {
   font-family: 'Cairo', sans-serif;
   background: #fff;
   color: #000;
+  direction: rtl;
+text-align: right; /* اختياري حسب تصميمك */
+
 
 }
 
@@ -154,6 +160,9 @@ body {
   background: #fff;
   color: #fff;
   background-color: #0D1B2A;
+  direction: rtl;
+
+
 }
 
 /* الحاوية الرئيسية */
@@ -166,6 +175,8 @@ body {
   margin: 0 auto;
   padding: 2rem;
   gap: 2rem;
+  flex-direction: column-reverse;
+
 
 }
 
@@ -229,4 +240,13 @@ body {
     width: 100%;
     height: auto;
   }
+}
+
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row-reverse; /* ✨ هذا سيحل المشكلة */
 }
