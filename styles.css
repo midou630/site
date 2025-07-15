@@ -1,51 +1,232 @@
-
+/* Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-
-    font-family: 'Changa', sans-serif;
-
-
-}
-* {
-  font-family: 'Changa', sans-serif !important;
-  direction: rtl; /* إذا كان موقعك بالعربية */
+  font-family: 'Cairo', sans-serif;
+  background: #fff;
+  color: #000;
 
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
+ul {
+  list-style: none;
+}
 
-.search-container {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
   display: flex;
-  justify-content: center; /* لتوسيطه داخل الحاوية */
+  justify-content: space-between;
   align-items: center;
-  margin: 20px auto;
-  max-width: 700px; /* عرض أقصى */
-  border: 0.5px solid #000000;
-  border-radius: 25px;
-  overflow: hidden; /* لقص الحواف */
-  margin-top: 300px;
+  color: #0D1B2A !important;
+
 }
 
-.search-container input[type="text"] {
-  border: none;
-  padding: 20px 30px;
-  flex: 1; /* يشغل كل المساحة المتاحة */
-  font-size: 16px;
-  outline: none;
+.logo {
+  font-weight: bold;
+  font-size: 1.8rem;
+
+font-family: sans-serif;
 }
 
-.search-container button {
-  background-color: #fff;
-  color: #000000;
-  border: none;
-  padding: 20px 30px;
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 20px;
+}
+
+.nav-links li a {
+  position: relative;
+  padding: 0.2rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background: #000;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
   cursor: pointer;
 }
 
-.search-container button:hover {
-  background-color: #000000;
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background: #000;
+  margin: 4px 0;
+  transition: all 0.4s ease;
 }
 
-.search-container i {
-  font-size: 16px;
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100%;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+  }
+
+  .nav-links li {
+    margin: 1.5rem 0;
+  }
+
+  .nav-links.open {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ظل خفيف لجمالية */
+  background-color: rgba(255, 255, 255, 0.9);
+}
+body {
+  padding-top: 80px; /* ارتفاع الهيدر لتعويض المساحة */
+}
+body {
+  background-image: url('images/1.png'); /* ضع رابط الصورة هنا */
+  background-size: cover; /* تجعلها تغطي كل الصفحة */
+  background-position: center; /* تجعل الصورة تتمركز */
+  background-repeat: no-repeat; /* لا تكرر الصورة */
+  background-attachment: fixed; /* تجعلها ثابتة عند التمرير إذا أحببت */
+}
+
+
+
+
+
+
+
+
+/* أساسي لتنسيق الصفحة */
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: #fff;
+  color: #fff;
+  background-color: #0D1B2A;
+}
+
+/* الحاوية الرئيسية */
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* ضروري لتتغير عند الشاشات الصغيرة */
+  max-width:1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  gap: 2rem;
+
+}
+
+/* الصورة */
+.flex-image {
+  flex: 1 1 50%;
+
+
+}
+
+.flex-image img {
+  width: 100%;
+  height: auto; /* يحفظ النسبة ولا يقص الصورة */
+  display: block;
+  border-radius: 8px;
+  object-fit: cover; /* لو كانت الحاوية ثابتة */
+
+}
+
+/* النص */
+.flex-content {
+  flex: 1 1 50%;
+}
+
+.flex-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.flex-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.flex-content .btn {
+  background: #0D1B2A;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.flex-content .btn:hover {
+  background: #142d4c;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column; /* من صف لعمود */
+    text-align: center;
+  }
+
+  .flex-image, .flex-content {
+    flex: 1 1 100%;
+  }
+
+  .flex-image img {
+    width: 100%;
+    height: auto;
+  }
 }
