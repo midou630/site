@@ -85,3 +85,46 @@ shareBtn.addEventListener('click', () => {
     `;
   }
 });
+const encryptShareBtn = document.getElementById('encryptShareBtn');
+
+encryptShareBtn.addEventListener('click', () => {
+  if (!fileInput.files[0] || !passwordInput.value) {
+    statusBox.textContent = 'يرجى اختيار الملف وإدخال الرمز السري.';
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const fileData = e.target.result;
+    const wordArray = CryptoJS.lib.WordArray.create(fileData);
+    const encrypted = CryptoJS.AES.encrypt(wordArray, passwordInput.value).toString();
+    const blob = new Blob([encrypted], { type: "text/plain" });
+
+    const fileName = fileInput.files[0].name + '.enc';
+    const fileToShare = new File([blob], fileName, { type: "text/plain" });
+
+    const pageUrl = window.location.href;
+
+    if (navigator.canShare && navigator.canShare({ files: [fileToShare] })) {
+      navigator.share({
+        title: 'ملف مشفر 🔐',
+        text: `إليك الملف المشفر. لفك التشفير استخدم أداتنا هنا: ${pageUrl}`,
+        files: [fileToShare]
+      })
+      .then(() => {
+        statusBox.textContent = '✅ تمت المشاركة بنجاح!';
+      })
+      .catch((error) => {
+        statusBox.textContent = '❌ حدث خطأ أثناء المشاركة.';
+        console.error(error);
+      });
+    } else {
+      statusBox.innerHTML = `
+        ❌ جهازك لا يدعم المشاركة التلقائية.<br>
+        يمكنك تحميل الملف يدويًا ومشاركته:
+        <a href="${pageUrl}" target="_blank">${pageUrl}</a>
+      `;
+    }
+  };
+  reader.readAsArrayBuffer(fileInput.files[0]);
+});
