@@ -128,3 +128,23 @@ encryptShareBtn.addEventListener('click', () => {
   };
   reader.readAsArrayBuffer(fileInput.files[0]);
 });
+if (navigator.canShare && navigator.canShare({ files: [fileToShare] })) {
+  navigator.share({
+    title: 'ملف مشفر 🔐',
+    text: `إليك الملف المشفر. لفك التشفير استخدم أداتنا هنا: ${pageUrl}`,
+    files: [fileToShare]
+  })
+  .then(() => {
+    statusBox.textContent = '✅ تمت المشاركة بنجاح!';
+  })
+  .catch((error) => {
+    statusBox.textContent = '❌ حدث خطأ أثناء المشاركة.';
+    console.error("Share error:", error);
+  });
+} else {
+  statusBox.innerHTML = `
+    ❌ المشاركة التلقائية للملفات غير مدعومة على هذا الجهاز.<br>
+    يمكنك تحميل الملف ومشاركته يدويًا:
+    <a href="${pageUrl}" target="_blank">${pageUrl}</a>
+  `;
+}
