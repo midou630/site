@@ -1,9 +1,9 @@
+/* Reset & Font */
+
 html, body {
   overflow-x: hidden;
 }
 
-
-/* Reset & Font */
 * {
   margin: 0;
   padding: 0;
@@ -37,6 +37,8 @@ ul {
   justify-content: space-between;
   align-items: center;
   color: #0D1B2A !important;
+  height: 60px;
+
 
 }
 
@@ -45,12 +47,13 @@ ul {
   font-size: 1.8rem;
 
 font-family: sans-serif;
+
 }
 
 .nav-links {
   display: flex;
   gap: 2rem;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .nav-links li a {
@@ -137,9 +140,7 @@ header {
   box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* ظل خفيف لجمالية */
   background-color: rgba(255, 255, 255, 0.9);
 }
-body {
-  padding-top: 80px; /* ارتفاع الهيدر لتعويض المساحة */
-}
+
 body {
   background-image: url('images/1.png'); /* ضع رابط الصورة هنا */
   background-size: cover; /* تجعلها تغطي كل الصفحة */
@@ -160,8 +161,8 @@ body {
   margin: 0;
   font-family: 'Cairo', sans-serif;
   background: #fff;
-  color: #fff;
-  background-color: #0D1B2A;
+  color: #000;
+
 
 
 
@@ -173,7 +174,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap; /* ضروري لتتغير عند الشاشات الصغيرة */
-  max-width:1200px;
+  max-width:2000%;
   margin: 0 auto;
   padding: 2rem;
   gap: 2rem;
@@ -277,11 +278,17 @@ body {
 /* ✅ الكارت الواحد */
 .service-card {
   background: #08162c;
+    background: #fff;
   color: #fff;
+    color: #000;
   padding: 2rem 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-image: url('images/serv1.png'); /* غيّر المسار حسب الصورة */
+  background-size: cover;
+  background-position: center;
+
 }
 
 .service-card:hover {
@@ -292,7 +299,7 @@ body {
 .service-card i {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #C9A66B; /* لمسة ذهبي */
+  color: #000; /* لمسة ذهبي */
 }
 
 .service-card h3 {
@@ -308,13 +315,16 @@ body {
 
 .service-card .btn {
   display: inline-block;
-  background: #C9A66B;
-  color: #08162c;
+  background: #000;
+  color: #fff;
   padding: 0.6rem 1.2rem;
   border-radius: 4px;
   text-decoration: none;
   transition: background 0.3s ease;
 }
+.btn {
+width: 99%;
+  }
 
 .service-card .btn:hover {
   background: #b89252;
@@ -337,57 +347,95 @@ body {
 
 
 
-/* ✅ حاوية البحث */
+
+/* الحاوية الأساسية */
+.hero {
+  width: 100% !important;
+  height: 400px !important;
+  background-image: url('images/2.png'); /* غيّر المسار حسب الصورة */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100% !important;
+  height: 400px !important;
+}
+
+/* تراكب شفاف فوق الصورة */
+
+
+.overlay {
+  background-image: url('images/2.png'); /* المسار الصحيح */
+  background-color: rgba(0, 0, 0, 0.5);  /* طبقة شفافة داكنة */
+  background-size: cover;               /* ✅ تغطي كامل الشاشة */
+  background-repeat: no-repeat;         /* لا تكرار للصورة */
+  background-position: center;          /* توسيط الصورة */
+  width: 100%;
+  height: 700px;;                        /* تأخذ كامل ارتفاع الشاشة */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+
+}
+
+
+
+/* العنوان */
+.overlay h2 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* شريط البحث */
 .search-box {
   display: flex;
-  max-width: 90%;
-  margin: 0 auto 2rem; /* وسّطه وأضف مسافة أسفله */
-  background: #fff;
-  border: 2px solid #08162c;
-  border-radius: 50px;
-  overflow: hidden;
-
+  width: 90%;
+  max-width: 600px;
 }
 
 .search-box input {
   flex: 1;
-  border: none;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   font-size: 1rem;
-  outline: none;
-
+  border: none;
+  border-radius: 0.5rem 0 0 0.5rem;
+  background-color: white;
+  color: black;
 }
 
 .search-box button {
-  background: #C9A66B;
-  color: #fff;
-  border: none;
-  padding: 0 1.5rem;
-  cursor: pointer;
+  padding: 1rem 1.5rem;
   font-size: 1rem;
-  transition: background 0.3s ease;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 0 0.5rem 0.5rem 0;
+  cursor: pointer;
 }
 
 .search-box button:hover {
-  background: #142d4c;
+  background-color: #333;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* مسافة بين الصورة والنص */
 }
 
-/* ✅ متجاوب للشاشات الصغيرة */
-@media (max-width: 480px) {
-  .search-box {
-    flex-direction: column;
-    border-radius: 12px;
-      width: 100%;
-  }
+.logo-img {
+  height: 50px;
+}
 
-  .search-box input,
-  .search-box button {
-    width: 100%;
-    padding: 1rem;
-    border-radius: 0;
-  }
-
-  .search-box button {
-    border-top: 1px solid #08162c;
-  }
+.logo-text {
+  font-family: serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 1px;
 }

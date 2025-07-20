@@ -4,18 +4,74 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>أداة تشفير الملفات</title>
+
   <link rel="stylesheet" href="scane.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap" rel="stylesheet">
+  <!-- ضع الرابط داخل <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+    <link rel="stylesheet" href="styles.css" />
+      <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
-  <header class="navbar">
-    <h1>🔐 تشفير الملفات</h1>
+  <header>
+    <nav class="container1">
+      <div class="logo">ARBICORP</div>
+      <ul class="nav-links">
+
+
+        <li><a href="#">  تواصل معنا   </a></li>
+        <li><a href="#">الخدمات       </a></li>
+        <li><a href="#">أعمالنا      </a></li>
+        <li><a href="#">الرئيسية    </a></li>
+        <li><a href="#"><i class="fab fa-facebook-f"></i>     </a></li>
+          <li><a href="#"><i class="fab fa-instagram"></i>     </a></li>
+            <li><a href="#">     <i class="fas fa-envelope"></i>   </a></li>
+              <li><a href="#"><i class="fas fa-phone"></i>    </a></li>
+                <li><a href="#">  <i class="fas fa-map-marker-alt"></i>   </a></li>
+      </ul>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
   </header>
 
+
   <main class="container">
+
+
     <h2>شفر ملفاتك بأمان</h2>
     <p>اختر ملفًا، أدخل رمزًا سريًا، وشفره لحمايته — أو فك تشفير ملف سابق.</p>
 
     <div class="box">
+
+
       <input type="file" id="fileInput">
       <input type="password" id="password" placeholder="أدخل الرمز السري">
       <div class="buttons">
@@ -29,9 +85,45 @@
     <div id="status"></div>
   </main>
 
-  <footer class="footer">
-    <p>© 2025 جميع الحقوق محفوظة لموقعك.</p>
-  </footer>
+  <section class="top">
+    <img src="logo.svg" />
+    <div class="links">
+      <div class="links-column">
+        <h2>Portfolio</h2>
+        <a>About</a>
+        <a>Skills</a>
+        <a>Attributes</a>
+        <a>Projects</a>
+        <a>Testimonials</a>
+      </div>
+      <div class="links-column">
+        <h2>Resources</h2>
+        <a>GitHub</a>
+        <a>npm</a>
+        <a>Codepen</a>
+        <a>Codesandbox</a>
+        <a>Dribbble</a>
+      </div>
+
+        <div class="socials">
+          <a class="fa-brands fa-instagram"></a>
+          <a class="fa-brands fa-tiktok"></a>
+          <a class="fa-brands fa-linkedin"></a>
+        </div>
+
+    </div>
+  </section>
+  <section class="bottom">
+    <p class="copyright">© 2024 All rights reserved</p>
+    <div class="legal">
+      <a> Contact </a>
+      <a> Terms </a>
+      <a> Privacy </a>
+    </div>
+  </section>
+</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <script src="libs/crypto-js.min.js"></script>
   <script src="scane.js"></script>
