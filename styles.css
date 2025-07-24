@@ -388,7 +388,7 @@ width: 99%;
 /* العنوان */
 .overlay h2 {
   color: white;
-  font-size: 1rem;
+  font-size: 12px;
   margin-bottom: 1.5rem;
 }
 
@@ -397,14 +397,15 @@ width: 99%;
   display: flex;
   width: 90%;
   max-width: 600px;
+  color: black;
 }
 
-.search-box input {
+.search-box input{
   flex: 1;
   padding: 1rem;
   font-size: 1rem;
   border: none;
-  border-radius: 0.5rem 0 0 0.5rem;
+
   background-color: white;
   color: black;
 }
@@ -415,13 +416,14 @@ width: 99%;
   border: none;
   background-color: black;
   color: white;
-  border-radius: 0 0.5rem 0.5rem 0;
+
   cursor: pointer;
 }
 
 .search-box button:hover {
   background-color: #333;
 }
+
 .logo {
   display: flex;
   align-items: center;
@@ -962,4 +964,161 @@ width: 99%;
 .icon {
   font-size: 2.5rem;
   margin-bottom: 15px;
+}
+
+
+
+
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 1s ease;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  border-radius: 10px;
+  max-width: 70%;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+.contract-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f2f2f2;
+  min-height: 100vh;
+  background-image: url('images/0.png'); /* ضع رابط الصورة هنا */
+  background-size: cover; /* تجعلها تغطي كل الصفحة */
+  background-position: center; /* تجعل الصورة تتمركز */
+  background-repeat: no-repeat; /* لا تكرر الصورة */
+  background-attachment: fixed; /* تجعلها ثابتة عند التمرير إذا أحببت */
+
+
+}
+
+.contract-paper {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  white-space: pre-wrap;
+  border-radius: 8px;
+  position: relative;
+}
+
+#cursor {
+  position: absolute;
+  bottom: 40px;
+  left: 50px;
+  animation: blink 0.8s infinite;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+
+
+
+.contract-paper {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+#contractText {
+  white-space: pre-wrap;     /* مهم جدًا */
+  word-break: break-word;    /* يمنع التمدد خارج الشاشة */
+  max-width: 100%;
+}
+@media (max-width: 600px) {
+  .contract-paper {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  #cursor {
+    bottom: 20px;
+    left: 20px;
+  }
 }
